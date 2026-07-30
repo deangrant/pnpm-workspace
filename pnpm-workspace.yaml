@@ -9,6 +9,14 @@ catalog:
 # false = deny; unlisted packages fail install (strictDepBuilds).
 allowBuilds:
 
+# Fail install when the current Node/pnpm version is outside package.json
+# engines. Documents intent; without this, engines is advisory only.
+engineStrict: true
+
+# Fail install when a dependency has build scripts not listed in allowBuilds.
+# pnpm 11 default is true; set explicitly so intent survives default changes.
+strictDepBuilds: true
+
 # Enforces exact dependency versioning across all workspace packages.
 saveExact: true
 
@@ -18,6 +26,11 @@ minimumReleaseAge: 30240
 
 # Exclude packages from the minimum release age policy.
 minimumReleaseAgeExclude:
+
+# Block transitive deps from exotic sources (git/URL); only registry, workspace,
+# or local. pnpm 11 default is true; set explicitly so intent survives default
+# changes.
+blockExoticSubdeps: true
 
 # Force-replace transitive versions across the dependency graph to avoid
 # supply-chain downgrades.

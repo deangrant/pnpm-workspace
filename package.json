@@ -4,6 +4,9 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.3"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "keywords": [],
   "license": "ISC",
   "name": "pnpm-workspace",
@@ -12,7 +15,7 @@
   "scripts": {
     "check": "biome check .",
     "check:fix": "biome check --write .",
-    "format": "pnpm run format:check",
+    "format": "biome format --write .",
     "format:check": "biome format .",
     "format:fix": "biome format --write .",
     "lint": "biome lint .",
