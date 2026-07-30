@@ -1,0 +1,24 @@
+{
+  "author": "Dean Grant",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.3"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "name": "pnpm-workspace",
+  "packageManager": "pnpm@11.8.0",
+  "private": true,
+  "scripts": {
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "format": "pnpm run format:check",
+    "format:check": "biome format .",
+    "format:fix": "biome format --write .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "lint:lockfile": "pnpm install --frozen-lockfile"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
