@@ -26,6 +26,8 @@ minimumReleaseAge: 30240
 
 # Exclude packages from the minimum release age policy.
 minimumReleaseAgeExclude:
+  - brace-expansion@5.0.8 # CVE-2026-14257, fixed in 5.0.8 (2026-07-23T11:39:25.744Z).
+  - fast-uri@3.1.4 # CVE-2026-16221, fixed in 3.1.4 (2026-07-19T07:42:54.497Z).
 
 # Block transitive deps from exotic sources (git/URL); only registry, workspace,
 # or local. pnpm 11 default is true; set explicitly so intent survives default
@@ -44,3 +46,4 @@ trustPolicy: no-downgrade
 # Exclude packages from the trust policy check. Use only after verifying the
 # version is safe (e.g. missing provenance is accidental, not a takeover).
 trustPolicyExclude:
+  - semver@6.3.1 # Required by react-doctor@0.7.2 as a direct dependency.

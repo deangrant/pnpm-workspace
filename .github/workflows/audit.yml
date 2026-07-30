@@ -1,4 +1,4 @@
-name: Lint
+name: Dependency Audit
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  lint:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,11 +33,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Setup Biome
-        uses: biomejs/setup-biome@4c91541eaada48f67d7dbd7833600ce162b68f51
-
-      - name: Run Biome
-        run: biome ci .
-
-      - name: Validate lockfile
-        run: pnpm lint:lockfile
+      - name: Run pnpm audit
+        run: pnpm audit
