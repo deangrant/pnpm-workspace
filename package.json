@@ -3,7 +3,7 @@
   "description": "",
   "devDependencies": {
     "@biomejs/biome": "2.5.3",
-    "react-doctor": "0.7.2"
+    "react-doctor": "0.7.6"
   },
   "engines": {
     "node": ">=22"
